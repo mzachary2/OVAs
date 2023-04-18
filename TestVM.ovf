@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Envelope xmlns="http://schemas.dmtf.org/ovf/envelope/1" xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/1" xmlns:vmw="http://www.vmware.com/schema/ovf" xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData" xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData">
   <References>
-    <File ovf:id="file1" ovf:href="TestVM-1.vmdk"/>
+    <File ovf:id="file1" ovf:href="TestVM2-1.vmdk"/>
   </References>
   <DiskSection>
     <Info>List of the virtual disks</Info>
@@ -15,7 +15,7 @@
   </NetworkSection>
   <VirtualSystem ovf:id="New Virtual Machtestvmine">
     <Info>A Virtual system</Info>
-    <Name>TestVM</Name>
+    <Name>TestVM2</Name>
     <OperatingSystemSection ovf:id="93" vmw:osType="ubuntuGuest">
       <Info>The operating system installed</Info>
       <Description>Ubuntu Linux (32-bit)</Description>
@@ -85,21 +85,21 @@
         <rasd:InstanceID>7</rasd:InstanceID>
         <rasd:ResourceSubType>VmxNet3</rasd:ResourceSubType>
         <rasd:ResourceType>10</rasd:ResourceType>
-        <vmw:Config ovf:required="false" vmw:key="uptv2Enabled" vmw:value="false"/>
-        <vmw:Config ovf:required="false" vmw:key="connectable.allowGuestControl" vmw:value="false"/>
         <vmw:Config ovf:required="false" vmw:key="wakeOnLanEnabled" vmw:value="true"/>
+        <vmw:Config ovf:required="false" vmw:key="uptv2Enabled" vmw:value="false"/>
         <vmw:Config ovf:required="false" vmw:key="uptCompatibilityEnabled" vmw:value="true"/>
+        <vmw:Config ovf:required="false" vmw:key="connectable.allowGuestControl" vmw:value="false"/>
       </Item>
       <Item ovf:required="false">
         <rasd:ElementName>Video card</rasd:ElementName>
         <rasd:InstanceID>8</rasd:InstanceID>
         <rasd:ResourceType>24</rasd:ResourceType>
-        <vmw:Config ovf:required="false" vmw:key="use3dRenderer" vmw:value="automatic"/>
+        <vmw:Config ovf:required="false" vmw:key="graphicsMemorySizeInKB" vmw:value="262144"/>
         <vmw:Config ovf:required="false" vmw:key="numDisplays" vmw:value="1"/>
-        <vmw:Config ovf:required="false" vmw:key="videoRamSizeInKB" vmw:value="8192"/>
         <vmw:Config ovf:required="false" vmw:key="useAutoDetect" vmw:value="false"/>
         <vmw:Config ovf:required="false" vmw:key="enable3DSupport" vmw:value="false"/>
-        <vmw:Config ovf:required="false" vmw:key="graphicsMemorySizeInKB" vmw:value="262144"/>
+        <vmw:Config ovf:required="false" vmw:key="videoRamSizeInKB" vmw:value="8192"/>
+        <vmw:Config ovf:required="false" vmw:key="use3dRenderer" vmw:value="automatic"/>
       </Item>
       <vmw:Config ovf:required="false" vmw:key="cpuHotAddEnabled" vmw:value="false"/>
       <vmw:Config ovf:required="false" vmw:key="sgxInfo.epcSize" vmw:value="0"/>
@@ -118,5 +118,17 @@
       <vmw:Config ovf:required="false" vmw:key="firmware" vmw:value="bios"/>
       <vmw:ExtraConfig ovf:required="false" vmw:key="nvram" vmw:value="New Virtual Machtestvmine.nvram"/>
     </VirtualHardwareSection>
+    <ProductSection>
+      <Info>Information about the installed software</Info>
+      <Property ovf:type="string" ovf:key="Property_2">
+        <Label>Property 2</Label>
+        <Description/>
+      </Property>
+      <Category>test</Category>
+      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="Property_1">
+        <Label>Property 1</Label>
+        <Description/>
+      </Property>
+    </ProductSection>
   </VirtualSystem>
 </Envelope>
